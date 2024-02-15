@@ -1,9 +1,5 @@
 bool isPalindrome(String sequence) {
-  // String left = sequence.splitMapJoin(pattern).replaceAll(from, replace);
-  String reverse = sequence[sequence.length - 1];
-
-  for (var i = sequence.length - 2; i >= 0; i--) {
-    reverse = reverse + sequence[i];
-  }
-  return sequence == reverse;
+  var formattedStr = sequence.toLowerCase().replaceAll(r'[^a-z0-9]', '');
+  var reversedStr = formattedStr.split('').reversed.join('');
+  return formattedStr == reversedStr;
 }
